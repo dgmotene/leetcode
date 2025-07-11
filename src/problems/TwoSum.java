@@ -4,7 +4,12 @@ import java.util.HashMap;
 
 public class TwoSum {
     public static void main(String[] args) {
+        //example
+        int[] nums = {1,2,3,4,6,7,8};
+        int target = 10;
 
+        int[] result = solution(nums, target);
+        System.out.printf("[%d,%d]", result[0],result[1]);
     }
 
     public static int[] solution(int[] nums, int target){
