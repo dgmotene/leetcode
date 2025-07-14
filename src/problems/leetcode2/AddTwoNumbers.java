@@ -9,32 +9,31 @@ public class AddTwoNumbers {
 //        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  }
 
- public  static ListNode solution(ListNode l1, ListNode l2){
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode dummyHead = new ListNode(0);
+        ListNode tail = dummyHead;
         int carry = 0;
 
-        ListNode current = dummyHead;
+        while (l1 != null || l2 != null || carry != 0) {
+            int digit1 = (l1 != null) ? l1.val : 0;
+            int digit2 = (l2 != null) ? l2.val : 0;
 
-        while(l1 != null || l2 != null){
-            int x = (l1 != null) ? l1.val : 0;
-            int y = (l2 != null) ? l2.val : 0;
-
-            int sum = carry + x + y;
+            int sum = digit1 + digit2 + carry;
+            int digit = sum % 10;
             carry = sum / 10;
 
-            current.next = new ListNode(sum % 10);
+            ListNode newNode = new ListNode(digit);
+            tail.next = newNode;
+            tail = tail.next;
 
-
-            current = current.next;
-
-            if (l1 != null) l1 = l1.next;
-            if (l2 != null) l2 = l2.next;
-
+            l1 = (l1 != null) ? l1.next : null;
+            l2 = (l2 != null) ? l2.next : null;
         }
-        if(carry > 0){
-            current.next = new ListNode(carry);
+
+            ListNode result = dummyHead.next;
+            dummyHead.next = null;
+            return result;
         }
-        return dummyHead.next;
- }
+
 
 }
