@@ -1,4 +1,4 @@
-package problems;
+package problems.leetcode1;
 
 public class TwoSumBruteForce {
     public static void main(String[] args) {
