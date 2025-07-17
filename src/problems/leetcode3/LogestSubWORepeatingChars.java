@@ -3,7 +3,14 @@ package problems.leetcode3;
 import java.util.HashMap;
 
 public class LogestSubWORepeatingChars {
-    public int solution(String s){
+
+    public static void main(String[] args) {
+        String s = "abcabbc";
+
+        int result = solution(s);
+        System.out.println(result);
+    }
+    public static int solution(String s){
         
         int result = 0, left = 0, n = s.length();
 
@@ -20,3 +27,5 @@ public class LogestSubWORepeatingChars {
         return  result;
     }
 }
+
+
